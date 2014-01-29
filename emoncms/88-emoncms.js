@@ -1,5 +1,5 @@
 /**
- * Copyright Henrik Olsson henols@gmail.com Copyright 2013 IBM Corp.
+ * Copyright 2013 Henrik Olsson henols@gmail.com
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
