@@ -36,13 +36,13 @@
         <label for="node-input-nodegroup"><i class="icon-tag"></i> Node</label>
         <input type="text" id="node-input-nodegroup" placeholder="">
     </div>
-    <div class="form-tips">The <b>Base URL</b> gets prepended to whatever payload is passed in. Leave blank if you pass in a full url.<br/>The append gets added to the end after any payload.<br/>The output Topic is the same as the input Topic.</div>
+    <div class="form-tips">The <b>Base URL</b> is the URL to the Emoncms root directory.<br/>If Topic is left blank the output Topic is the same as the input Topic.</div>
 </script>
 
 <script type="text/x-red" data-help-name="emoncms">
 	<p>Performs post to Emoncms.</p>
-	<p>The return code is placed in <b>msg.rc</b>, and the full text of the result is in <b>msg.payload</b>.</p>
 	<p>The topic is not mandatory, if not set it will use <b>msg.topic</b>.</p>
+	<p>The Node is not mandatory, and if set shall be a number</p>
 </script>
 
 <script type="text/javascript">
