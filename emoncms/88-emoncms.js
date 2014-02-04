@@ -15,12 +15,24 @@
  */
 
 var RED = require(process.env.NODE_RED_HOME+"/red/red");
+//The Server Definition - this opens (and closes) the connection
+function EmoncmsServerNode(n) {
+    RED.nodes.createNode(this,n);
+    this.server = n.server;
+    this.apikey = n.apikey;
+    this.name = n.name;
+}
+RED.nodes.registerType("emoncms-server",EmoncmsServerNode);
 
 function Emoncms(n) {
 	RED.nodes.createNode(this,n);
-	this.baseurl = n.baseurl || "";
+    this.emonServer = n.emonServer;
+    var sc = RED.nodes.getNode(this.emonServer);
+
+	this.baseurl = sc.server;
+	this.apikey = sc.apikey;
+
 	this.topic = n.topic ||"";
-	this.apikey = n.apikey || "";
 	this.nodegroup = n.nodegroup || "";
 	var node = this;
 	if (this.baseurl.substring(0,5) === "https") { var http = require("https"); }
